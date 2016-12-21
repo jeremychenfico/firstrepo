@@ -14,7 +14,7 @@
   <xs:element name="Customer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="currentCustomerFlag" type="xs:boolean" />
+        <xs:element minOccurs="1" name="currentCustomerFlag" type="xs:boolean" />
         <xs:element minOccurs="0" name="monthsWithCustomer" type="xs:integer" />
         <xs:element minOccurs="0" name="fraudAlertFlag" type="xs:boolean" />
         <xs:element ref="PersonalDetails" />
