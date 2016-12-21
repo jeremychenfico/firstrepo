@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML Studio - FREE Community Edition 7.0.1.654 (http://www.liquid-technologies.com)-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DecisionRequest">
+    <xs:complexType>
+      <xs:sequence>
+      	<xs:element name="requestID" type="xs:string"/>
+        <xs:element minOccurs="0" name="requestType" type="xs:string" />
+        <xs:element ref="Customer" />
+        <xs:element minOccurs="0" ref="DecisionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Customer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="currentCustomerFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="monthsWithCustomer" type="xs:integer" />
+        <xs:element minOccurs="0" name="fraudAlertFlag" type="xs:boolean" />
+        <xs:element ref="PersonalDetails" />
+        <xs:element ref="FinancialDetails" />
+        <xs:element ref="AddressDetails" />
+        <xs:element ref="EmploymentDetails" />
+        <xs:element ref="CreditReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PersonalDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstName" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" type="xs:string" />
+        <xs:element minOccurs="0" name="genderType" type="xs:string" />
+        <xs:element minOccurs="0" name="citizenshipCountryCode" type="xs:string" />
+        <xs:element minOccurs="0" name="maritalStatus" type="xs:string" />
+        <xs:element minOccurs="0" name="personalIDNumber" type="xs:string" />
+        <xs:element minOccurs="0" name="birthDate" type="xs:date" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinancialDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="totalMonthlyIncome" type="xs:double" />
+        <xs:element minOccurs="0" name="verifiedIncomeFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="totalAssetAmount" type="xs:double" /> 
+        <xs:element minOccurs="0" name="totalMonthlyLiabilityAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="totalCollateral" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddressDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="residenceType" type="xs:string" />
+        <xs:element minOccurs="0" name="residentialStatusIndicator" type="xs:string" />
+        <xs:element minOccurs="0" name="monthsAtAddress" type="xs:integer" />
+        <xs:element minOccurs="0" name="addressStatusIndicator" type="xs:string" />
+        <xs:element minOccurs="0" name="city" type="xs:string" />
+        <xs:element minOccurs="0" name="state" type="xs:string" />
+        <xs:element minOccurs="0" name="postalCode" type="xs:string" />
+        <xs:element minOccurs="0" name="countryCode" type="xs:string" />
+        <xs:element minOccurs="0" name="verifiedFlag" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmploymentDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="selfEmployedFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ourEmployeeFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="monthsAtEmployer" type="xs:integer" />
+        <xs:element minOccurs="0" name="occupationCode" type="xs:string" />
+        <xs:element minOccurs="0" name="employmentStatusIndicator" type="xs:string" />
+        <xs:element minOccurs="0" name="verifiedFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="employmentType" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreditReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="thinFileFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="majorDerogatoryRatingsCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="averageRevolvingTradeLineBalance" type="xs:integer" />
+        <xs:element minOccurs="0" name="monthsSinceFileEstablished" type="xs:integer" />
+        <xs:element minOccurs="0" name="totalMonthlyPaymentsAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="mortgageTradeLinesCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="totalAmountNowPastDue" type="xs:integer" />
+        <xs:element minOccurs="0" name="debtRatioPercent" type="xs:integer" />
+        <xs:element minOccurs="0" name="revolvingTradeLinesCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="totalRevolvingOpenTradeLineBalances" type="xs:integer" />
+        <xs:element minOccurs="0" name="revolvingBurdenPercent" type="xs:integer" />
+        <xs:element minOccurs="0" name="revolvingBankcardsCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="mismatchingSSNFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="foreclosuresCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="repossessionsCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="addressMismatchFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bankruptcyOnFileFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="existingAccountFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="currentTradeLinesCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="worstRatingCode" type="xs:string" />
+        <xs:element minOccurs="0" name="inquiriesCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="totalRevolvingCreditLineAmount" type="xs:integer" />
+        <xs:element minOccurs="0" name="collectionsCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="monthlyHousingPaymentAmount" type="xs:integer" />
+        
+        <xs:element minOccurs="0" name="estimatedLoanPaymentAmount" type="xs:integer" />
+        <xs:element minOccurs="0" name="totalMonthlyIncomeAmount" type="xs:integer" />
+        <xs:element minOccurs="0" name="tradeInPaymentAmount" type="xs:integer" />
+        
+        <xs:element minOccurs="0" name="creditCounselingFlag" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bankruptciesCount" type="xs:integer" />
+        <xs:element minOccurs="0" name="standardScore" type="xs:integer" />
+        <xs:element minOccurs="0" name="standardScoreModelCode" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecisionResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ProductOffer" />
+        <xs:element ref="CustomScoring" />
+        <xs:element name="qualifiedCustomerFlag" type="xs:boolean" />
+        <xs:element name="disqualificationReason" type="xs:string" />
+      	<xs:element name="creditTier" type="xs:string" />
+      	<xs:element name="creditRiskStrategy" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProductOffer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productCode" type="xs:string" />
+        <xs:element minOccurs="0" name="productCategory" type="xs:string" />
+        <xs:element minOccurs="0" name="productName" type="xs:string" />
+        <xs:element minOccurs="0" name="rateType" type="xs:string" />
+        <xs:element minOccurs="0" name="advanceAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="creditLimitAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="termInMonths" type="xs:integer" />
+        <xs:element minOccurs="0" name="ratePercent" type="xs:double" />
+        <xs:element minOccurs="0" name="monthlyPaymentAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="marketingCost" type="xs:double" />
+        <xs:element minOccurs="0" name="expectedRevenue" type="xs:double" />
+        <xs:element minOccurs="0" name="takeUpRate" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustomScoring">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="score" type="xs:integer" />
+        <xs:element minOccurs="0" name="scoreModelCode" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
